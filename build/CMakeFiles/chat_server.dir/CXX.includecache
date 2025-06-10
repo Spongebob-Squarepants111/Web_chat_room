@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/C++_Projects/Chat_Room/include/chat_handler.h
+string
+-
+vector
+-
+unordered_map
+-
+mutex
+-
+hiredis/hiredis.h
+-
+mysql/mysql.h
+-
+
+/root/C++_Projects/Chat_Room/include/client.h
+string
+-
+unordered_map
+-
+functional
+-
+
+/root/C++_Projects/Chat_Room/src/client.cpp
+../include/client.h
+/root/C++_Projects/Chat_Room/include/client.h
+../include/chat_handler.h
+/root/C++_Projects/Chat_Room/include/chat_handler.h
+iostream
+-
+fstream
+-
+sstream
+-
+nlohmann/json.hpp
+-
+

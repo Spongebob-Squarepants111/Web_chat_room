@@ -1,0 +1,8 @@
+Current working directory: /root/C++_Projects/Chat_Room/build
+Starting chat server on port 8080...
+Binding to all interfaces (0.0.0.0:8080)
+Server started on port 8080
+New connection from 127.0.0.1:52060
+收到HTTP请求: GET /api/rooms HTTP/1.1
+请求头: Authorization: Bearer 3a54ae8423eccf1486a471faa3ed724b
+New connection from 127.0.0.1:52076

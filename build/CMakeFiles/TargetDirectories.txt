@@ -1,0 +1,7 @@
+/root/C++_Projects/Chat_Room/build/CMakeFiles/install/strip.dir
+/root/C++_Projects/Chat_Room/build/CMakeFiles/install/local.dir
+/root/C++_Projects/Chat_Room/build/CMakeFiles/install.dir
+/root/C++_Projects/Chat_Room/build/CMakeFiles/list_install_components.dir
+/root/C++_Projects/Chat_Room/build/CMakeFiles/rebuild_cache.dir
+/root/C++_Projects/Chat_Room/build/CMakeFiles/edit_cache.dir
+/root/C++_Projects/Chat_Room/build/CMakeFiles/chat_server.dir
