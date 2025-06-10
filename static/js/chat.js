@@ -32,8 +32,8 @@ function safeAddEventListener(element, event, handler) {
 let currentRoomId = null;
 
 // 检查用户是否已登录
-const token = localStorage.getItem('token');
-const username = localStorage.getItem('username');
+const token = sessionStorage.getItem('token');
+const username = sessionStorage.getItem('username');
 
 if (!token || !username) {
     // 如果没有登录，重定向到登录页面
@@ -85,7 +85,7 @@ function loadRooms() {
     }
     
     // 确保有token
-    const currToken = localStorage.getItem('token');
+    const currToken = sessionStorage.getItem('token');
     if (!currToken) {
         roomsList.innerHTML = '<div class="error-message">请先登录</div>';
         return;
@@ -678,8 +678,8 @@ function setupLogoutButton() {
         newLogoutBtn.addEventListener('click', function() {
             // 显示确认对话框
             if (confirm('您确定要退出吗？')) {
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('username');
     window.location.href = '/';
             }
         });
@@ -971,7 +971,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 获取房间创建信息
         const roomId = data.room_id;
-        const currentUser = localStorage.getItem('username') || '未知用户';
+        const currentUser = sessionStorage.getItem('username') || '未知用户';
         
         // 移除"无房间"提示，如果存在
         const noRoomMsg = roomsList.querySelector('.no-room-message');

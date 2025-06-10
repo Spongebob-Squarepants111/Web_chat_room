@@ -49,9 +49,9 @@ loginForm.addEventListener('submit', function(event) {
             loginMessage.textContent = '登录成功，正在跳转...';
             loginMessage.classList.add('success');
             
-            // 存储令牌到本地存储
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('username', username);
+            // 将token存储在sessionStorage而不是localStorage
+            sessionStorage.setItem('token', data.token);
+            sessionStorage.setItem('username', username);
             
             // 跳转到聊天页面
             setTimeout(() => {
@@ -123,8 +123,8 @@ registerForm.addEventListener('submit', function(event) {
 // 检查用户是否已登录
 window.addEventListener('DOMContentLoaded', function() {
     // 先清除任何现有的令牌，禁用自动登录
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('username');
     
     // 可以在此处添加其他初始化代码
 }); 

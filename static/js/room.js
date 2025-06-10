@@ -21,8 +21,8 @@ const currentRoomDescription = document.getElementById('current-room-description
 let currentRoomId = null;
 
 // 检查用户是否已登录
-const token = localStorage.getItem('token');
-const username = localStorage.getItem('username');
+const token = sessionStorage.getItem('token');
+const username = sessionStorage.getItem('username');
 
 console.log('检查登录状态:', token ? '已登录' : '未登录', username);
 
@@ -31,6 +31,11 @@ if (!token || !username) {
     console.log('未登录，正在重定向到登录页面...');
     alert('请先登录后再访问房间列表');
     window.location.href = '/';
+} else {
+    // 显示用户名
+    if (usernameSpan) {
+        usernameSpan.textContent = username;
+    }
 }
 
 // 加载房间列表
@@ -309,8 +314,8 @@ backBtn.addEventListener('click', () => {
 // 退出登录
 logoutBtn.addEventListener('click', function() {
     // 清除本地存储
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('username');
     
     // 重定向到登录页面
     window.location.href = '/';

@@ -476,14 +476,11 @@
     
     <!-- 初始化脚本 -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 获取用户令牌
-            const token = localStorage.getItem('token');
-            if (!token) {
-                window.location.href = '/';
-                return;
-            }
-        });
+        // 检查token是否有效
+        const token = sessionStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/';
+        }
     </script>
 </body>
 </html>

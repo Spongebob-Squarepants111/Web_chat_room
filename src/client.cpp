@@ -10,6 +10,10 @@ using json = nlohmann::json;
 // 全局聊天处理器实例
 extern ChatHandler g_chat_handler;
 
+// 引用main.cpp中定义的函数
+extern std::string removeQueryParams(const std::string& path);
+extern std::string getResourcePath(const std::string& relativePath);
+
 // 从请求Body解析JSON
 json parseJsonBody(const std::string& body) {
     try {
@@ -194,8 +198,10 @@ std::string ApiClient::handleGetMessages(const std::unordered_map<std::string, s
 
 std::string ApiClient::handleChatPage(const std::unordered_map<std::string, std::string>& headers, const std::string& body) {
     // 读取聊天页面HTML文件
-    std::ifstream file("./templates/chat.html");
+    std::string filePath = getResourcePath("/templates/chat.html");
+    std::ifstream file(filePath);
     if (!file) {
+        std::cerr << "Error: Could not open chat.html at " << filePath << std::endl;
         return "<html><body><h1>Error: Chat page not found</h1></body></html>";
     }
     
@@ -412,8 +418,10 @@ std::string ApiClient::handleGetRoomMessages(const std::unordered_map<std::strin
 // 处理房间页面请求
 std::string ApiClient::handleRoomPage(const std::unordered_map<std::string, std::string>& headers, const std::string& body) {
     // 读取房间页面HTML文件
-    std::ifstream file("./templates/room.html");
+    std::string filePath = getResourcePath("/templates/room.html");
+    std::ifstream file(filePath);
     if (!file) {
+        std::cerr << "Error: Could not open room.html at " << filePath << std::endl;
         return "<html><body><h1>Error: Room page not found</h1></body></html>";
     }
     

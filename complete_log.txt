@@ -1,0 +1,5 @@
+Current working directory: /root/C++_Projects/Chat_Room/build
+Starting chat server on port 8080...
+Binding to all interfaces (0.0.0.0:8080)
+Failed to bind to port 8080
+Failed to start server
